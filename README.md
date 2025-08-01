@@ -4,7 +4,7 @@ An interactive and beautifully designed Intern Dashboard that showcases intern d
 
 ## 🌐 Live Demo
 
-[🔗 View Live Portal  https://shreya1531.github.io/portal/])  
+🔗 View Live Portal  https://shreya1531.github.io/portal/  
 
 ## 📦 Tech Stack
 
