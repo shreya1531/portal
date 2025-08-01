@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dashboard</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+</head>
+<body>
+  <div class="card animate-fade-in">
+    <h2 id="greeting">Hello, Intern 👋</h2>
+    <p><strong>Referral Code:</strong> <span id="referral">-</span></p>
+    <p><strong>Total Donations:</strong> ₹<span id="donations">-</span></p>
+    <div class="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+    <h3>🎁 Rewards Unlocked</h3>
+    <ul id="rewards"></ul>
+    <button onclick="location.href='leaderboard.html'">View Leaderboard</button>
+  </div>
+
+  <script>
+    const rewardsList = [
+      { amount: 500, text: "₹500 – Certificate of Appreciation" },
+      { amount: 1000, text: "₹1000 – Company Swag" },
+      { amount: 2000, text: "₹2000 – Internship Completion Badge" }
+    ];
+
+    db.collection("interns").doc("shreya").get().then(doc => {
+      if (doc.exists) {
+        const data = doc.data();
+        document.getElementById("greeting").textContent = `Hello, ${data.name} 👋`;
+        document.getElementById("referral").textContent = data.referralCode;
+        document.getElementById("donations").textContent = data.donations;
+        
+        // Rewards logic
+        const ul = document.getElementById("rewards");
+        rewardsList.forEach(reward => {
+          const li = document.createElement("li");
+          li.textContent = reward.text;
+          if (data.donations >= reward.amount) li.classList.add("unlocked");
+          ul.appendChild(li);
+        });
+
+        // Progress bar
+        const progress = Math.min(data.donations / 2000 * 100, 100);
+        document.getElementById("progress-bar").style.width = progress + "%";
+      }
+    });
+  </script>
+</body>
+</html>

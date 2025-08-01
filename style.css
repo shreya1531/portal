@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 360px;
+  text-align: center;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: rgba(255, 255, 255, 0.4);
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+ul li.unlocked {
+  background-color: #d4edda;
+  font-weight: bold;
+}
+
+ul li.highlight {
+  background-color: #f3ffdd;
+  font-weight: bold;
+  color: green;
+}
+
+.progress-container {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  margin: 15px 0;
+  height: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0;
+  background-color: #4caf50;
+  transition: width 1s ease;
+  border-radius: 20px;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
