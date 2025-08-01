@@ -27,7 +27,7 @@ An interactive and beautifully designed Intern Dashboard that showcases intern d
 
 intern-portal/
 
-│
+
 ├── index.html # Dummy login page
 
 ├── dashboard.html # Intern dashboard
