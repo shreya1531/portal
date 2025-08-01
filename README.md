@@ -26,6 +26,7 @@ An interactive and beautifully designed Intern Dashboard that showcases intern d
 ## 📁 Folder Structure
 
 intern-portal/
+
 │
 ├── index.html # Dummy login page
 
