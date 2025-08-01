@@ -24,6 +24,7 @@ An interactive and beautifully designed Intern Dashboard that showcases intern d
 - 🎨 Glass UI and smooth transitions
 
 ## 📁 Folder Structure
+
 intern-portal/
 │
 ├── index.html # Dummy login page
